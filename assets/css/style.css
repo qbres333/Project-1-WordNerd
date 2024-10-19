@@ -1,0 +1,193 @@
+/* Apply universal box-sizing and reset margins and padding */
+* {
+    box-sizing: border-box; /* Ensures that padding and border are included in the element's total width and height */
+    margin: 0;  /* Removes default margin from all elements */
+    padding: 0;  /* Removes default padding from all elements */
+}
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Sets the font family to Arial with sans-serif as a fallback */
+    line-height: 1.6; /* Sets the line height to improve readability */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 25px
+}
+
+#related-words-display div ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#related-words-display div ul li {
+    border-bottom: 1px solid gray;
+}
+/* Styles for the site header */
+.site-header {
+    padding: 10px 20px; /* Adds padding around the header content */
+    position: sticky;   /* Makes the header stick to the top of the page when scrolling */
+    top: 0;  /* Positions the header at the top of the viewport */
+    z-index: 5;  /* Ensures the header stays above other content with a lower z-index */
+}
+
+/* Flexbox container for layout */
+.container {
+    display: flex; /* Uses flexbox for the layout of child elements */
+    padding: 20px;  /* Adds padding inside the container */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 30%;  /* Sets the sidebar to occupy 30% of the container's width */
+    padding-right: 20px; /* Adds padding to the right side of the sidebar */
+}
+
+
+.sidebar .card {
+    margin-bottom: 20px; /* Adds space between cards in the sidebar */
+}
+
+/* Main content area styles */
+.main-content {
+    width: 70%;  /* Sets the main content to occupy 70% of the container's width */
+    background-color: #f9f9f9; /* Applies a light gray background color */
+}
+
+/* Styles for buttons in the header */
+.main-content .card-content {
+    max-height: 500px;  /* Limits the height of content inside cards */
+    overflow-y: auto;  /* Adds vertical scrolling if content exceeds the max height */
+}
+
+/* Styles for buttons in the header */
+.header-buttons .button {
+    margin-left: 10px; /* Adds space between buttons in the header */
+}
+
+/* Class for adding vertical scrolling */
+.scroll-overflow {
+    overflow-y: scroll; /* Enables vertical scrolling */
+}
+/* Styles for the modal body */
+.modal-body {
+    max-height: 60vh; /* Limits the height of the modal body to 60% of the viewport height */
+}
+/* Class to bring an element to the front */
+.display-front {
+    z-index: 100; /* Ensures the element stays in front of other elements with a lower z-index */
+}
+
+/* Standard padding for wrod info cards */
+.word-card {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Add bold font weight */
+.boldify {
+    font-weight: bold;
+}
+
+.related-words-title {
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.related-word-list-item {
+    display: block;
+    width: 100%;
+}
+.related-word-list-item:hover {
+    background-color: gainsboro;
+}
+
+/* Custom styling for bulma dropdown */
+.dropdown-content-custom {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.dropdown {
+    display: inline;
+}
+
+/* Styling for symbol to resize */
+.github-symbol {
+    height: 35px;
+    width: auto;
+}
+
+/* Create spacing at desktop size */
+.main-content {
+    margin-left: 10px;
+}
+
+/* Override Bulma for desired modal display */
+.modal-card, .modal-content {
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* Override bulma columns effects for specified section */
+#related-words-display {
+    display: flex;
+}
+
+
+/* Media query for tablet size */
+@media (max-width: 900px) {
+    /* Moves word info below word-search and gif cards */
+    .responsive-content-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Moves gif card next to search card  */
+    .responsive-sidebar {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+
+    /* Resize margin on search card for new gif card location */
+    #search-card {
+        margin-right: 10px;
+    }
+
+    /* Resize word info card */
+    .main-content {
+        width: 100%;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    /* Remove scrolling for word info card */
+    .main-content .card-content {
+        max-height: fit-content;
+        overflow-y: visible;
+    }
+}
+    
+@media (max-width: 620px) {
+    /* Move gif card back to below search card */
+    .responsive-sidebar {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    /* Remove search margin as gif is moved to below */
+    #search-card {
+        margin-right: 0px;
+    }
+
+}
+
+@media (max-width: 400px){
+    /* Change to inline display at small scale */
+    #related-words-display {
+        display: inline;
+    }
+}
